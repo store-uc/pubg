@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UC Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- زر تغيير اللغة -->
+    <button id="language-toggle" onclick="toggleLanguage()">العربية</button>
+
+    <section class="hero" id="home">
+        <div class="hero-overlay">
+            <div class="hero-text">
+                <h1 data-en="Welcome to UC Store" data-ar="مرحباً بك في متجر UC">Welcome to UC Store</h1>
+                <p data-en="Charge UC quickly and easily for an outstanding gaming experience" data-ar="اشحن UC بسرعة وسهولة لتجربة لعب مميزة">Charge UC quickly and easily for an outstanding gaming experience</p>
+                <a href="#packages" class="cta-button" data-en="Packages" data-ar="الباقات">Packages</a>
+            </div>
+        </div>
+    </section>    
+
+    <section class="packages" id="packages">
+        <h2 data-en="Available Packages" data-ar="الباقات المتوفرة">Available Packages</h2>
+        <div class="package-container">
+            <div class="package">
+                <img src="images/UC/30uc.png" alt="UC 30">
+                <h2 data-en="30 UC" data-ar="30 UC">30 UC</h2>
+                <p data-en="25.00 EGP" data-ar="25.00 جنيه مصري">25.00 EGP</p>
+                <button class="buy-button" data-en="Buy Now" data-ar="اشتري الآن">
+                    <i class="fas fa-shopping-cart"></i> Buy Now
+                </button>
+            </div>
+            <div class="package">
+                <img src="images/UC/60uc.png" alt="UC 60">
+                <h2 data-en="60 UC" data-ar="60 UC">60 UC</h2>
+                <p data-en="45.00 EGP" data-ar="45.00 جنيه مصري">45.00 EGP</p>
+                <button class="buy-button" data-en="Buy Now" data-ar="اشتري الآن">
+                    <i class="fas fa-shopping-cart"></i> Buy Now
+                </button>
+            </div>
+            <div class="package">
+                <img src="images/UC/325uc.png" alt="UC 325">
+                <h2 data-en="325 UC" data-ar="325 UC">325 UC</h2>
+                <p data-en="225.00 EGP" data-ar="225.00 جنيه مصري">225.00 EGP</p>
+                <button class="buy-button" data-en="Buy Now" data-ar="اشتري الآن">
+                    <i class="fas fa-shopping-cart"></i> Buy Now
+                </button>
+            </div>
+            <div class="package">
+                <img src="images/UC/660uc.png" alt="UC 660">
+                <h2 data-en="660 UC" data-ar="660 UC">660 UC</h2>
+                <p data-en="450.00 EGP" data-ar="450.00 جنيه مصري">450.00 EGP</p>
+                <button class="buy-button" data-en="Buy Now" data-ar="اشتري الآن">
+                    <i class="fas fa-shopping-cart"></i> Buy Now
+                </button>
+            </div>
+            <div class="package">
+                <img src="images/UC/1800uc.png" alt="UC 1800">
+                <h2 data-en="1800 UC" data-ar="1800 UC">1800 UC</h2>
+                <p data-en="1150.00 EGP" data-ar="1150.00 جنيه مصري">1150.00 EGP</p>
+                <button class="buy-button" data-en="Buy Now" data-ar="اشتري الآن">
+                    <i class="fas fa-shopping-cart"></i> Buy Now
+                </button>
+            </div>
+            <div class="package">
+                <img src="images/UC/3850uc.png" alt="UC 3850">
+                <h2 data-en="3850 UC" data-ar="3850 UC">3850 UC</h2>
+                <p data-en="1900.00 EGP" data-ar="1900.00 جنيه مصري">1900.00 EGP</p>
+                <button class="buy-button" data-en="Buy Now" data-ar="اشتري الآن">
+                    <i class="fas fa-shopping-cart"></i> Buy Now
+                </button>
+            </div>
+            <div class="package">
+                <img src="images/UC/8100uc.png" alt="UC 8100">
+                <h2 data-en="8100 UC" data-ar="8100 UC">8100 UC</h2>
+                <p data-en="3850.00 EGP" data-ar="3850.00 جنيه مصري">3850.00 EGP</p>
+                <button class="buy-button" data-en="Buy Now" data-ar="اشتري الآن">
+                    <i class="fas fa-shopping-cart"></i> Buy Now
+                </button>
+            </div>
+            <div class="package">
+                <img src="images/UC/16200uc.png" alt="UC 16200">
+                <h2 data-en="16200 UC" data-ar="16200 UC">16200 UC</h2>
+                <p data-en="25 EGP" data-ar="25 جنيه مصري">25 EGP</p>
+                <button class="buy-button" data-en="Buy Now" data-ar="اشتري الآن">
+                    <i class="fas fa-shopping-cart"></i> Buy Now
+                </button>
+            </div>
+            <!-- Repeat for other packages -->
+            <!-- Add similar divs for other packages here -->
+        </div>
+    </section>
+
+    <section class="faq" id="faq">
+        <h2 data-en="Frequently Asked Questions" data-ar="الأسئلة الشائعة">Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <button class="faq-question" data-en="How to purchase UC?" data-ar="كيف أشتري UC؟">
+                <i class="fas fa-question-circle"></i> How to purchase UC?
+                <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+                <p data-en="1. Choose a package." data-ar="1. اختر باقة.">1. Choose a package.</p>
+                <p data-en="2. Click on 'Buy Now'." data-ar="2. اضغط على 'اشتري الآن'.">2. Click on "Buy Now".</p>
+                <p data-en="3. Follow the payment instructions." data-ar="3. اتبع تعليمات الدفع.">3. Follow the payment instructions.</p>
+            </div>
+        </div>
+        <!-- Repeat for other questions -->
+    </section>    
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3 data-en="About UC Store" data-ar="عن متجر UC">About UC Store</h3>
+                <p data-en="Your one-stop solution for PUBG UC charging with fast and reliable service." data-ar="حلّك الشامل لشحن UC في PUBG بخدمة سريعة وموثوقة.">Your one-stop solution for PUBG UC charging with fast and reliable service.</p>
+            </div>
+            <div class="footer-section links">
+                <h3 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h3>
+                <ul>
+                    <li><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                    <li><a href="#packages" data-en="Packages" data-ar="الباقات">Packages</a></li>
+                    <li><a href="#faq" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a></li>
+                    <li><a href="#contact" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h3 data-en="Follow Us" data-ar="تابعنا">Follow Us</h3>
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="https://wa.me/+201070817647" class="whatsapp-button" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>       
+        <div class="footer-bottom">
+            <p data-en="&copy; 2024 UC Store | All Rights Reserved | Powered by Vodafone Cash" data-ar="&copy; 2024 متجر UC | جميع الحقوق محفوظة | مدعوم بواسطة فودافون كاش">&copy; 2024 UC Store | All Rights Reserved | Powered by Vodafone Cash</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

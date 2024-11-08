@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vodafone Cash Payment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- زر تغيير اللغة -->
+    <button id="language-toggle" onclick="toggleLanguage()">العربية</button>
+
+    <section class="payment-section">
+        <h2 data-en="Complete Your Payment" data-ar="أكمل عملية الدفع">Complete Your Payment</h2>
+
+        <!-- رقم التحويل -->
+        <div class="transfer-number">
+            <p data-en="Please transfer the money to this number:" data-ar="يرجى تحويل المبلغ إلى هذا الرقم:">Please transfer the money to this number:</p>
+            <p class="transfer-phone-number">01070817647</p> <!-- ضع رقم التحويل هنا -->
+        </div>
+        
+        <!-- عرض سعر الباقة المختارة فقط -->
+        <div class="price-display">
+            <p id="selected-package-price"></p>
+        </div>
+        
+        <!-- نموذج الدفع -->
+        <form id="payment-form">
+            <label for="phone" data-en="The number from which the money was transferred" data-ar="الرقم الذي تم تحويل المال منه">The number from which the money was transferred</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your Vodafone Cash number" required>
+        
+            <label for="player-id" data-en="Player ID" data-ar="معرف اللاعب">Player ID</label>
+            <input type="text" id="player-id" name="player-id" placeholder="Enter your Player ID" required>
+        
+            <label for="screenshot" data-en="Upload Transaction Screenshot:" data-ar="تحميل لقطة الشاشة للمعاملة:">Upload Transaction Screenshot:</label>
+            <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
+        
+            <button type="submit" class="pay-button" data-en="Submit Payment" data-ar="إرسال الدفع">Submit Payment</button>
+        </form>
+    </section>
+
+    <!-- نافذة تأكيد الطلب -->
+    <div id="confirmation-modal" class="modal">
+        <div class="modal-content">
+            <h2 data-en="Order Confirmed!" data-ar="تم تأكيد الطلب!">Order Confirmed!</h2>
+            <p data-en="Your UC will be delivered to your account within minutes. Thank you for trusting us!" data-ar="ستصل الشدات إلى حسابك خلال دقائق. شكراً لثقتك بنا!">Your UC will be delivered to your account within minutes. Thank you for trusting us!</p>
+            <button onclick="closeConfirmation()" data-en="Okay" data-ar="حسنًا">Okay</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

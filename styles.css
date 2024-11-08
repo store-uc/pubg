@@ -1,0 +1,451 @@
+/* Reset */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    background-color: #181818;
+    color: #D1D1D1;
+}
+
+.nav-buttons {
+    display: flex;
+}
+
+.nav-button:hover {
+    background: linear-gradient(45deg, #333333, #444444);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* زر تغيير اللغة */
+#language-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 1001;
+    transition: background-color 0.3s;
+}
+
+#language-toggle:hover {
+    background-color: #3B7EB3;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('images/HeroBackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-text {
+    color: #fff;
+    z-index: 1;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #4A90E2;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background 0.3s;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background: #3B7EB3;
+}
+
+/* Packages Section */
+.packages {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #1F1F1F;
+}
+
+.packages h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #4A90E2;
+}
+
+.package-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 20px;
+}
+
+.package {
+    width: 160px;
+    background-color: #242424;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.package:hover {
+    transform: scale(1.05);
+    background-color: #2A2A2A;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.package h2 {
+    font-size: 25px;
+    margin-bottom: -5px;
+    color: #4A90E2;
+}
+
+.package p {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+/* Buy Button */
+.buy-button {
+    background: linear-gradient(45deg, #3D3D3D, #4A4A4A);
+    color: #E5E5E5;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.buy-button:hover {
+    background: linear-gradient(45deg, #5A5A5A, #6A6A6A);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* FAQ Section */
+.faq {
+    padding: 50px 20px;
+    text-align: left;
+    background-color: #1F1F1F;
+}
+
+.faq h2 {
+    font-size: 36px;
+    color: #4A90E2;
+    text-align: center;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    background-color: #242424;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.faq-question {
+    font-size: 20px;
+    color: #4A90E2;
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-toggle i {
+    transition: transform 0.3s;
+}
+
+.faq-answer {
+    display: none;
+    padding-top: 10px;
+    color: #D1D1D1;
+    font-size: 18px;
+}
+
+.faq-question.active + .faq-answer {
+    display: block;
+}
+
+.faq-question.active .faq-toggle i {
+    transform: rotate(180deg);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1A1A1A;
+    color: #CCCCCC;
+    padding: 40px 20px;
+    font-size: 16px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #4A90E2;
+}
+
+.footer-section p, .footer-section ul, .footer-section a {
+    font-size: 15px;
+    color: #CCCCCC;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #CCCCCC;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #4A90E2;
+    font-weight: bold;
+}
+
+.social-media a {
+    color: #4A90E2;
+    font-size: 20px;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #FFFFFF;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #333333;
+    margin-top: 20px;
+    color: #CCCCCC;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #25D366;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #242424;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+}
+
+.whatsapp-button:hover {
+    background-color: #25D366;
+    color: #FFFFFF;
+}
+
+/* Payment Section */
+.payment-section {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 30px;
+    background-color: #1F1F1F;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    color: #D1D1D1;
+    text-align: center;
+}
+
+.payment-section h2 {
+    color: #4A90E2;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.price-display {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 22px;
+    color: #FFD700;
+}
+
+#payment-form label {
+    display: block;
+    font-size: 16px;
+    margin-top: 15px;
+    text-align: left;
+    color: #D1D1D1;
+}
+
+#payment-form input[type="tel"],
+#payment-form input[type="text"],
+#payment-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+    background-color: #333333;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+#payment-form input[type="tel"]:focus,
+#payment-form input[type="text"]:focus,
+#payment-form input[type="file"]:focus {
+    background-color: #444444;
+}
+
+#payment-form input[type="file"]::file-selector-button {
+    background: #4A90E2;
+    color: #FFFFFF;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#payment-form input[type="file"]::file-selector-button:hover {
+    background: #3B7EB3;
+}
+
+.pay-button {
+    width: 60%;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 18px;
+    background: #4A90E2;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.pay-button:hover {
+    background: #3B7EB3;
+}
+
+/* Confirmation Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #1F1F1F;
+    color: #D1D1D1;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    color: #4A90E2;
+    margin-bottom: 15px;
+}
+
+.modal-content button {
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: #3B7EB3;
+}
