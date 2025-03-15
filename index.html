@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4228349716002413"
-  crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4228349716002413" crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>شحن شدات ببجي</title>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #1e90ff; /* أزرق حديث */
-      --secondary: #f8f9fa; /* خلفية فاتحة */
-      --dark: #343a40;      /* رمادي غامق */
+      --primary: #3498db; /* أزرق حديث */
+      --secondary: #ecf0f1; /* خلفية فاتحة ناعمة */
+      --dark: #2c3e50;      /* أزرق داكن أنيق */
       --light: #ffffff;     /* أبيض */
-      --accent: #ffc107;    /* لمسة كهرمانية */
+      --accent: #e67e22;    /* برتقالي مميز */
     }
     * {
       margin: 0;
@@ -57,43 +56,10 @@
     nav ul li a:hover {
       color: var(--accent);
     }
-    /* قسم البطل */
-    .hero {
-      height: 100vh;
-      background: url('https://via.placeholder.com/1500x800') no-repeat center center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      margin-top: 80px;
-      text-align: center;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-      z-index: 0;
-    }
-    .hero .content {
-      position: relative;
-      z-index: 1;
-      color: var(--light);
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 1.5rem;
-    }
     /* قسم الباقات */
     .packages {
       max-width: 1200px;
-      margin: 50px auto;
+      margin: 100px auto 50px;
       padding: 20px;
     }
     .packages h2 {
@@ -144,22 +110,7 @@
       transition: background 0.3s ease;
     }
     .package-card button:hover {
-      background: #187bcd;
-    }
-    /* قسم من نحن */
-    .about {
-      max-width: 1200px;
-      margin: 50px auto;
-      padding: 20px;
-      text-align: center;
-    }
-    .about h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-    .about p {
-      font-size: 1.2rem;
-      line-height: 1.8;
+      background: #2980b9;
     }
     /* قسم الأسئلة الشائعة */
     .faq {
@@ -188,13 +139,13 @@
       transition: background 0.3s ease;
     }
     .faq-item .question:hover {
-      background: #187bcd;
+      background: #2980b9;
     }
     .faq-item .answer {
       display: none;
       padding: 15px;
       background: var(--light);
-      color: #000000;
+      color: #000;
       font-size: 1rem;
       line-height: 1.6;
     }
@@ -259,7 +210,7 @@
       transition: background 0.3s ease;
     }
     .modal form button:hover {
-      background: #187bcd;
+      background: #2980b9;
     }
     /* التذييل */
     footer {
@@ -273,11 +224,8 @@
       font-size: 1rem;
     }
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-      .hero p {
-        font-size: 1.2rem;
+      .packages h2 {
+        font-size: 2rem;
       }
     }
     /* شعار واتساب المتحرك */
@@ -294,94 +242,92 @@
       50% { transform: translateY(-10px); }
     }
     /* نافذة تأكيد الدفع */
-#successModal {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--light);
-  width: 90%;
-  max-width: 400px;
-  padding: 30px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  z-index: 1001;
-}
-#successModal h2 {
-  color: var(--primary);
-  margin-bottom: 15px;
-}
-#successModal p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-#successModal button {
-  background: var(--primary);
-  color: var(--light);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-#successModal button:hover {
-  background: #187bcd;
-}
-#successOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  display: none;
-  z-index: 1000;
-}
-/* نافذة التحميل */
-#loadingModal {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--light);
-  width: 90%;
-  max-width: 300px;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  z-index: 1002;
-}
-#loadingOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  display: none;
-  z-index: 1001;
-}
-/* سبينر التحميل */
-.spinner {
-  width: 40px;
-  height: 40px;
-  margin: 10px auto;
-  border: 4px solid var(--primary);
-  border-top: 4px solid transparent;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-
+    #successModal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--light);
+      width: 90%;
+      max-width: 400px;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      z-index: 1001;
+    }
+    #successModal h2 {
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+    #successModal p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    #successModal button {
+      background: var(--primary);
+      color: var(--light);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    #successModal button:hover {
+      background: #2980b9;
+    }
+    #successOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      z-index: 1000;
+    }
+    /* نافذة التحميل */
+    #loadingModal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--light);
+      width: 90%;
+      max-width: 300px;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      z-index: 1002;
+    }
+    #loadingOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      z-index: 1001;
+    }
+    /* سبينر التحميل */
+    .spinner {
+      width: 40px;
+      height: 40px;
+      margin: 10px auto;
+      border: 4px solid var(--primary);
+      border-top: 4px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   </style>
 </head>
 <body>
@@ -389,14 +335,6 @@
   <header>
     <div class="logo">شحن شدات ببجي</div>
   </header>
-
-  <!-- قسم البطل -->
-  <section class="hero" id="home">
-    <div class="content">
-      <h1>أشحن شدات ببجي بأفضل الأسعار</h1>
-      <p>تجربة مميزة وسهلة الشحن عبر موقعنا الاحترافي</p>
-    </div>
-  </section>
 
   <!-- قسم الباقات -->
   <section class="packages" id="packages">
@@ -441,14 +379,6 @@
     </div>
   </section>
 
-  <!-- قسم من نحن -->
-  <section class="about" id="about">
-    <h2>من نحن</h2>
-    <p>
-      نحن شركة متخصصة في تقديم خدمات شحن شدات ببجي بأفضل الأسعار وبأعلى درجات الأمان والسرعة. نسعى لتوفير تجربة سهلة ومميزة لجميع مستخدمينا مع دعم فني متواصل.
-    </p>
-  </section>
-
   <!-- قسم الأسئلة الشائعة -->
   <section class="faq" id="faq">
     <h2>الأسئلة الشائعة</h2>
@@ -467,7 +397,7 @@
     <div class="faq-item">
       <div class="question" onclick="toggleFAQ(this)">ماذا لو واجهت مشكلة أثناء الشحن؟</div>
       <div class="answer">
-        يمكنك التواصل مع فريق الدعم الفني عبر الضغط على علامة الواتساب الظاهرة اسفل يمين الموقع.
+        يمكنك التواصل مع فريق الدعم الفني عبر الضغط على علامة الواتساب الظاهرة أسفل يمين الموقع.
       </div>
     </div>
   </section>
@@ -480,7 +410,7 @@
     <div class="modal-image" style="text-align:center; margin:20px 0;">
       <img src="vodafone-cash-logo.png" alt="Vodafone Cash" style="max-width:50%; height:auto;">
     </div>
-    <!-- معلومات الدفع الجديدة -->
+    <!-- معلومات الدفع -->
     <p id="paymentInfo" style="text-align:center; font-weight:bold;"></p>
     <form id="paymentForm" onsubmit="submitPayment(event)">
       <input type="text" id="pubgID" placeholder="أدخل ID الخاص بك " required>
@@ -491,29 +421,28 @@
   </div>
 
   <!-- نافذة تحميل أثناء إرسال الطلب -->
-<div class="overlay" id="loadingOverlay"></div>
-<div class="modal" id="loadingModal">
-  <h2>جاري إرسال الطلب...</h2>
-  <p>يرجى الانتظار...</p>
-  <div class="spinner"></div>
-</div>
-
+  <div class="overlay" id="loadingOverlay"></div>
+  <div class="modal" id="loadingModal">
+    <h2>جاري إرسال الطلب...</h2>
+    <p>يرجى الانتظار...</p>
+    <div class="spinner"></div>
+  </div>
 
   <!-- النافذة المنبثقة لتأكيد الطلب -->
-<div class="overlay" id="successOverlay"></div>
-<div class="modal" id="successModal">
-  <span class="close-btn" onclick="closeSuccessModal()">&times;</span>
-  <h2>تم إرسال الطلب بنجاح ✅</h2>
-  <p>ستصل الشدات فور التحقق من الدفع.</p>
-  <button onclick="closeSuccessModal()">تم</button>
-</div>
+  <div class="overlay" id="successOverlay"></div>
+  <div class="modal" id="successModal">
+    <span class="close-btn" onclick="closeSuccessModal()">&times;</span>
+    <h2>تم إرسال الطلب بنجاح ✅</h2>
+    <p>ستصل الشدات فور التحقق من الدفع.</p>
+    <button onclick="closeSuccessModal()">تم</button>
+  </div>
 
   <!-- التذييل -->
   <footer>
     <p>&copy; 2025 شحن شدات ببجي. جميع الحقوق محفوظة.</p>
   </footer>
 
-  <!-- شعار واتساب متحرك باستخدام صورة من الإنترنت -->
+  <!-- شعار واتساب متحرك -->
   <a href="https://wa.me/+201070817647" target="_blank" class="whatsapp-logo">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب">
   </a>
@@ -537,68 +466,68 @@
 
     // دالة إرسال البيانات إلى تيلجرام
     function submitPayment(event) {
-  event.preventDefault();
-  const pubgID = document.getElementById('pubgID').value;
-  const phoneNumber = document.getElementById('phoneNumber').value;
-  const paymentProof = document.getElementById('paymentProof').files[0];
+      event.preventDefault();
+      const pubgID = document.getElementById('pubgID').value;
+      const phoneNumber = document.getElementById('phoneNumber').value;
+      const paymentProof = document.getElementById('paymentProof').files[0];
 
-  if (!pubgID || !phoneNumber || !paymentProof) {
-    alert('يرجى تعبئة جميع الحقول المطلوبة.');
-    return;
-  }
+      if (!pubgID || !phoneNumber || !paymentProof) {
+        alert('يرجى تعبئة جميع الحقول المطلوبة.');
+        return;
+      }
 
-  openLoadingModal(); // 📌 إظهار نافذة التحميل فورًا
+      openLoadingModal(); // إظهار نافذة التحميل فورًا
 
-  const formData = new FormData();
-  formData.append('chat_id', '7336270350'); // استبدل بالـ Chat ID الخاص بك
-  formData.append('caption', `📌ID : ${pubgID}\n📌phone number : ${phoneNumber}\n📌UC: ${selectedPackage.name}`);
-  formData.append('photo', paymentProof);
+      const formData = new FormData();
+      formData.append('chat_id', '7336270350'); // استبدل بالـ Chat ID الخاص بك
+      formData.append('caption', `📌ID : ${pubgID}\n📌phone number : ${phoneNumber}\n📌UC: ${selectedPackage.name}`);
+      formData.append('photo', paymentProof);
 
-  fetch('https://api.telegram.org/bot7722422574:AAGBP5AeJPdAs9Gs0dJOU7_rSLOdrIKimfI/sendPhoto', { // استبدل بـ Bot Token الخاص بك
-    method: 'POST',
-    body: formData
-  })
-  .then(response => response.json())
-  .then(data => {
-    closeLoadingModal(); // ⛔ إغلاق شاشة التحميل بعد الانتهاء
-    if (data.ok) {
-      openSuccessModal(); // ✅ فتح نافذة النجاح
-    } else {
-      alert('حدث خطأ أثناء إرسال البيانات إلى تيلجرام.');
+      fetch('https://api.telegram.org/bot7722422574:AAGBP5AeJPdAs9Gs0dJOU7_rSLOdrIKimfI/sendPhoto', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        closeLoadingModal();
+        if (data.ok) {
+          openSuccessModal();
+        } else {
+          alert('حدث خطأ أثناء إرسال البيانات إلى تيلجرام.');
+        }
+        closeModal();
+        document.getElementById('paymentForm').reset();
+      })
+      .catch(error => {
+        closeLoadingModal();
+        console.error(error);
+        alert('حدث خطأ أثناء إرسال البيانات.');
+      });
     }
-    closeModal();
-    document.getElementById('paymentForm').reset();
-  })
-  .catch(error => {
-    closeLoadingModal(); // إغلاق التحميل حتى عند حدوث خطأ
-    console.error(error);
-    alert('حدث خطأ أثناء إرسال البيانات.');
-  });
-}
 
-// 🟢 إظهار شاشة الانتظار
-function openLoadingModal() {
-  document.getElementById('loadingModal').style.display = 'block';
-  document.getElementById('loadingOverlay').style.display = 'block';
-}
+    // إظهار شاشة الانتظار
+    function openLoadingModal() {
+      document.getElementById('loadingModal').style.display = 'block';
+      document.getElementById('loadingOverlay').style.display = 'block';
+    }
 
-// ⛔ إغلاق شاشة الانتظار
-function closeLoadingModal() {
-  document.getElementById('loadingModal').style.display = 'none';
-  document.getElementById('loadingOverlay').style.display = 'none';
-}
+    // إغلاق شاشة الانتظار
+    function closeLoadingModal() {
+      document.getElementById('loadingModal').style.display = 'none';
+      document.getElementById('loadingOverlay').style.display = 'none';
+    }
 
-// ✅ فتح نافذة النجاح
-function openSuccessModal() {
-  document.getElementById('successModal').style.display = 'block';
-  document.getElementById('successOverlay').style.display = 'block';
-}
+    // فتح نافذة النجاح
+    function openSuccessModal() {
+      document.getElementById('successModal').style.display = 'block';
+      document.getElementById('successOverlay').style.display = 'block';
+    }
 
-// ❌ إغلاق نافذة النجاح
-function closeSuccessModal() {
-  document.getElementById('successModal').style.display = 'none';
-  document.getElementById('successOverlay').style.display = 'none';
-}
+    // إغلاق نافذة النجاح
+    function closeSuccessModal() {
+      document.getElementById('successModal').style.display = 'none';
+      document.getElementById('successOverlay').style.display = 'none';
+    }
 
     // وظيفة إظهار وإخفاء الإجابة في الأسئلة الشائعة
     function toggleFAQ(element) {
