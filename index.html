@@ -7,12 +7,13 @@
   <title>شحن شدات ببجي</title>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
+    /* لوحة ألوان احترافية */
     :root {
-      --primary: #3498db; /* أزرق حديث */
-      --secondary: #ecf0f1; /* خلفية فاتحة ناعمة */
-      --dark: #2c3e50;      /* أزرق داكن أنيق */
+      --primary: #007BFF; /* أزرق احترافي */
+      --secondary: #F8F9FA; /* خلفية فاتحة جداً */
+      --dark: #343A40;      /* رمادي داكن احترافي */
       --light: #ffffff;     /* أبيض */
-      --accent: #e67e22;    /* برتقالي مميز */
+      --accent: #FFC107;    /* أصفر ذهبي احترافي */
     }
     * {
       margin: 0;
@@ -27,7 +28,7 @@
     }
     /* شريط التنقل */
     header {
-      background-color: var(--dark);
+      background-color: #326fad;
       padding: 20px;
       position: fixed;
       top: 0;
@@ -110,7 +111,7 @@
       transition: background 0.3s ease;
     }
     .package-card button:hover {
-      background: #2980b9;
+      background: #0056b3;
     }
     /* قسم الأسئلة الشائعة */
     .faq {
@@ -139,13 +140,13 @@
       transition: background 0.3s ease;
     }
     .faq-item .question:hover {
-      background: #2980b9;
+      background: #0056b3;
     }
     .faq-item .answer {
       display: none;
       padding: 15px;
       background: var(--light);
-      color: #000;
+      color: var(--dark);
       font-size: 1rem;
       line-height: 1.6;
     }
@@ -210,11 +211,50 @@
       transition: background 0.3s ease;
     }
     .modal form button:hover {
-      background: #2980b9;
+      background: #0056b3;
+    }
+    /* زر اختيار الصورة الاحترافي */
+    .file-input-wrapper {
+      text-align: center;
+    }
+    .file-input-label {
+      display: inline-block;
+      background: linear-gradient(45deg, var(--primary), #0056b3);
+      color: var(--light);
+      padding: 12px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: bold;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .file-input-label:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    /* زر النسخ بصيغة أيقونة صغيرة */
+    #copyPhoneBtn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
+    #copyPhoneBtn svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--primary);
+    }
+    /* نص حالة النسخ */
+    #copyStatus {
+      display: none;
+      margin-left: 5px;
+      font-size: 0.9rem;
+      color: green;
     }
     /* التذييل */
     footer {
-      background: var(--dark);
+      background: #082038;
       color: var(--light);
       text-align: center;
       padding: 20px;
@@ -276,7 +316,7 @@
       transition: background 0.3s ease;
     }
     #successModal button:hover {
-      background: #2980b9;
+      background: #0056b3;
     }
     #successOverlay {
       position: fixed;
@@ -400,6 +440,12 @@
         يمكنك التواصل مع فريق الدعم الفني عبر الضغط على علامة الواتساب الظاهرة أسفل يمين الموقع.
       </div>
     </div>
+    <div class="faq-item">
+      <div class="question" onclick="toggleFAQ(this)">كيفية شحن حزمة الازدهار؟</div>
+      <div class="answer">
+        لشحن حزمة الازدهار تواصل معي على الواتساب على هذا الرقم (01070817647)
+      </div>
+    </div>
   </section>
 
   <!-- النافذة المنبثقة للدفع -->
@@ -410,12 +456,26 @@
     <div class="modal-image" style="text-align:center; margin:20px 0;">
       <img src="vodafone-cash-logo.png" alt="Vodafone Cash" style="max-width:50%; height:auto;">
     </div>
-    <!-- معلومات الدفع -->
-    <p id="paymentInfo" style="text-align:center; font-weight:bold;"></p>
+    <!-- معلومات الدفع مع أيقونة النسخ ونص حالة النسخ -->
+    <p id="paymentInfo" style="text-align:center; font-weight:bold;">
+      قم بتحويل مبلغ <span id="amount"></span> EGP لهذا الرقم 
+      <span id="paymentPhoneNumber">01080525816</span>
+      <button id="copyPhoneBtn" onclick="copyPhoneNumber()" title="نسخ الرقم">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+          <path d="M10 1.5v.5H6V1.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5z"/>
+          <path d="M3 2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3zm10 1v.5H3V3a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5zM2 4h12v9a.5.5 0 0 1-.5.5H2.5A.5.5 0 0 1 2 13V4z"/>
+        </svg>
+      </button>
+      <span id="copyStatus">تم النسخ</span>
+    </p>
     <form id="paymentForm" onsubmit="submitPayment(event)">
-      <input type="text" id="pubgID" placeholder="أدخل ID الخاص بك " required>
+      <input type="text" id="pubgID" placeholder="أدخل ID الخاص بك" required>
       <input type="text" id="phoneNumber" placeholder="رقم الهاتف الذي تمت منه العملية" required>
-      <input type="file" id="paymentProof" accept="image/*" required>
+      <!-- زر اختيار الصورة الاحترافي -->
+      <div class="file-input-wrapper">
+        <input type="file" id="paymentProof" accept="image/*" required style="display:none;">
+        <label for="paymentProof" class="file-input-label">اضغط هنا لرفع صورة عملية التحويل</label>
+      </div>
       <button type="submit">تأكيد الدفع</button>
     </form>
   </div>
@@ -453,8 +513,11 @@
     function openModal(packageName, packagePrice) {
       selectedPackage.name = packageName;
       selectedPackage.price = packagePrice;
-      // تحديث نص معلومات الدفع مع المبلغ والرقم الجديد
-      document.getElementById('paymentInfo').textContent = `قم بتحويل مبلغ ${packagePrice} EGP لهذا الرقم 01080525816`;
+      
+      // تحديث عناصر النص في نافذة الدفع
+      document.getElementById('amount').textContent = packagePrice;
+      document.getElementById('paymentPhoneNumber').textContent = '01080525816';
+      
       document.getElementById('paymentModal').style.display = 'block';
       document.getElementById('overlay').style.display = 'block';
     }
@@ -462,6 +525,20 @@
     function closeModal() {
       document.getElementById('paymentModal').style.display = 'none';
       document.getElementById('overlay').style.display = 'none';
+    }
+
+    // دالة نسخ رقم الهاتف مع عرض رسالة "تم النسخ"
+    function copyPhoneNumber() {
+      const phone = document.getElementById('paymentPhoneNumber').textContent;
+      navigator.clipboard.writeText(phone)
+        .then(() => {
+          const copyStatus = document.getElementById('copyStatus');
+          copyStatus.style.display = 'inline';
+          setTimeout(() => {
+            copyStatus.style.display = 'none';
+          }, 2000);
+        })
+        .catch(err => console.error('فشل نسخ الرقم:', err));
     }
 
     // دالة إرسال البيانات إلى تيلجرام
