@@ -81,6 +81,7 @@
       padding: 20px;
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
     }
     .package-card:hover {
       transform: translateY(-10px);
@@ -112,6 +113,30 @@
     }
     .package-card button:hover {
       background: #0056b3;
+    }
+    /* تنسيقات خاصة ببطاقة الخصم */
+    .package-card.discount {
+      position: relative;
+    }
+    .discount-ribbon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: var(--accent);
+      color: var(--dark);
+      padding: 5px 10px;
+      font-weight: bold;
+      border-radius: 5px;
+      transform: rotate(15deg);
+    }
+    .original-price {
+      text-decoration: line-through;
+      margin-right: 5px;
+      color: #888;
+    }
+    .discounted-price {
+      font-weight: bold;
+      color: var(--primary);
     }
     /* قسم الأسئلة الشائعة */
     .faq {
@@ -387,34 +412,45 @@
         <button onclick="openModal('60 شدّة', '50.00')">شراء الآن</button>
       </div>
       <div class="package-card">
-        <img src="60 UC.png" alt="باقة 325 شدّة">
-        <h3>325 شدّة</h3>
+        <img src="60 UC.png" alt="باقة 300+25 شدّة">
+        <h3>300+25 شدّة</h3>
         <p>السعر: 230.00 EGP</p>
-        <button onclick="openModal('325 شدّة', '230.00')">شراء الآن</button>
+        <button onclick="openModal('300+25 شدّة', '230.00')">شراء الآن</button>
       </div>
       <div class="package-card">
-        <img src="60 UC.png" alt="باقة 660 شدّة">
-        <h3>660 شدّة</h3>
+        <img src="60 UC.png" alt="باقة 600+60 شدّة">
+        <h3>600+60 شدّة</h3>
         <p>السعر: 450.00 EGP</p>
-        <button onclick="openModal('660 شدّة', '450.00')">شراء الآن</button>
+        <button onclick="openModal('600+60 شدّة', '450.00')">شراء الآن</button>
       </div>
       <div class="package-card">
-        <img src="60 UC.png" alt="باقة 1800 شدّة">
-        <h3>1800 شدّة</h3>
+        <img src="60 UC.png" alt="باقة 1500+300 شدّة">
+        <h3>1500+300 شدّة</h3>
         <p>السعر: 1100.00 EGP</p>
-        <button onclick="openModal('1800 شدّة', '1100.00')">شراء الآن</button>
+        <button onclick="openModal('1500+300 شدّة', '1100.00')">شراء الآن</button>
       </div>
       <div class="package-card">
-        <img src="60 UC.png" alt="باقة 3850 شدّة">
-        <h3>3850 شدّة</h3>
+        <img src="60 UC.png" alt="باقة 3000+850 شدّة">
+        <h3>3000+850 شدّة</h3>
         <p>السعر: 2100.00 EGP</p>
-        <button onclick="openModal('3850 شدّة', '2100.00')">شراء الآن</button>
+        <button onclick="openModal('3000+850 شدّة', '2100.00')">شراء الآن</button>
       </div>
       <div class="package-card">
-        <img src="60 UC.png" alt="باقة 8100 شدّة">
-        <h3>8100 شدّة</h3>
+        <img src="60 UC.png" alt="باقة 6000+2100 شدّة">
+        <h3>6000+2100 شدّة</h3>
         <p>السعر: 4200.00 EGP</p>
-        <button onclick="openModal('8100 شدّة', '4200.00')">شراء الآن</button>
+        <button onclick="openModal('6000+2100 شدّة', '4200.00')">شراء الآن</button>
+      </div>
+      <!-- الحزمة الأخيرة مع خصم -->
+      <div class="package-card discount">
+        <div class="discount-ribbon">خصم</div>
+        <img src="60 UC.png" alt="باقة 12000+4200 شدّة">
+        <h3>12000+4200 شدّة</h3>
+        <p>
+          <span class="original-price">8400.00 EGP</span><br>
+          <span class="discounted-price">7000.00 EGP</span>
+        </p>
+        <button onclick="openModal('12000+4200 شدّة', '7000.00')">شراء الآن</button>
       </div>
     </div>
   </section>
