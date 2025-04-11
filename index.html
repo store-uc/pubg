@@ -243,20 +243,29 @@
       text-align: center;
     }
     .file-input-label {
-      display: inline-block;
-      background: linear-gradient(45deg, var(--primary), #0056b3);
-      color: var(--light);
-      padding: 12px 25px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1.1rem;
-      font-weight: bold;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .file-input-label:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
+    display: inline-block;
+    background: linear-gradient(45deg, #6a9099, #1f6971);
+    color: #000000;
+    padding: 15px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.file-input-label:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.file-input-label:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
     /* زر النسخ بصيغة أيقونة صغيرة */
     #copyPhoneBtn {
       background: none;
@@ -417,11 +426,16 @@
         <p>السعر: 230.00 EGP</p>
         <button onclick="openModal('300+25 شدّة', '230.00')">شراء الآن</button>
       </div>
-      <div class="package-card">
-        <img src="60 UC.png" alt="باقة 600+60 شدّة">
+      <!-- الحزمة الأخيرة مع خصم -->
+      <div class="package-card discount">
+        <div class="discount-ribbon">خصم</div>
+        <img src="60 UC.png" alt="باقة 60+600 شدّة">
         <h3>600+60 شدّة</h3>
-        <p>السعر: 450.00 EGP</p>
-        <button onclick="openModal('600+60 شدّة', '450.00')">شراء الآن</button>
+        <p>
+          <span class="original-price">450.00 EGP</span><br>
+          <span class="discounted-price">390.00 EGP</span>
+        </p>
+        <button onclick="openModal('600+60 شدّة', '390.00')">شراء الآن</button>
       </div>
       <div class="package-card">
         <img src="60 UC.png" alt="باقة 1500+300 شدّة">
@@ -495,7 +509,7 @@
     <!-- معلومات الدفع مع أيقونة النسخ ونص حالة النسخ -->
     <p id="paymentInfo" style="text-align:center; font-weight:bold;">
       قم بتحويل مبلغ <span id="amount"></span> EGP لهذا الرقم 
-      <span id="paymentPhoneNumber">01080525816</span>
+      <span id="paymentPhoneNumber">01070817647</span>
       <button id="copyPhoneBtn" onclick="copyPhoneNumber()" title="نسخ الرقم">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
           <path d="M10 1.5v.5H6V1.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5z"/>
@@ -552,7 +566,7 @@
       
       // تحديث عناصر النص في نافذة الدفع
       document.getElementById('amount').textContent = packagePrice;
-      document.getElementById('paymentPhoneNumber').textContent = '01080525816';
+      document.getElementById('paymentPhoneNumber').textContent = '01070817647';
       
       document.getElementById('paymentModal').style.display = 'block';
       document.getElementById('overlay').style.display = 'block';
