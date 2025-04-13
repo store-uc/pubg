@@ -103,11 +103,12 @@
       color: #007bff;
     }
     .package-card button {
+      font-weight: bold;
       background: var(--primary);
       color: var(--light);
       border: none;
       padding: 10px 20px;
-      border-radius: 5px;
+      border-radius: 15px;
       font-size: 1rem;
       cursor: pointer;
       transition: background 0.3s ease;
@@ -227,12 +228,13 @@
       font-size: 1rem;
     }
     .modal form button {
+      font-weight: bold;
       background: var(--primary);
       color: var(--light);
       border: none;
       padding: 12px;
-      border-radius: 5px;
-      font-size: 1rem;
+      border-radius: 15px;
+      font-size: 1.2rem;
       cursor: pointer;
       transition: background 0.3s ease;
     }
@@ -244,17 +246,17 @@
       text-align: center;
     }
     .file-input-label {
-    display: inline-block;
-    background: linear-gradient(45deg, #6a9099, #1f6971);
-    color: #000000;
-    padding: 15px 30px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+      background: linear-gradient(45deg, #82b9f3, #b0e0f8);
+      color: #000000;
+      padding: 8px 13px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: bold;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .file-input-label:hover {
@@ -488,13 +490,13 @@
     <div class="faq-item">
       <div class="question" onclick="toggleFAQ(this)">ماذا لو واجهت مشكلة أثناء الشحن؟</div>
       <div class="answer">
-        يمكنك التواصل مع فريق الدعم الفني عبر الضغط على علامة الواتساب الظاهرة أسفل يمين الموقع.
+        يمكنك التواصل مع فريق الدعم الفني عبر الضغط على علامة الواتساب الظاهرة أسفل يسار الموقع.
       </div>
     </div>
     <div class="faq-item">
       <div class="question" onclick="toggleFAQ(this)">كيفية شحن حزمة الازدهار؟</div>
       <div class="answer">
-        لشحن حزمة الازدهار تواصل معي على الواتساب على هذا الرقم (01070817647)
+        لشحن حزمة الازدهار اضغط على علامة الواتساب أسفل يسار الموقع سيتم توجيهك للواتساب الخاص بي للتواصل معي.
       </div>
     </div>
   </section>
@@ -525,7 +527,7 @@
       <!-- زر اختيار الصورة الاحترافي -->
       <div class="file-input-wrapper">
         <input type="file" id="paymentProof" accept="image/*" required style="display:none;">
-        <label for="paymentProof" class="file-input-label">اضغط هنا لرفع صورة عملية التحويل</label>
+        <label for="paymentProof" class="file-input-label">اضغط هنا لرفع صورة سكرين شوت عملية التحويل</label>
       </div>
       <button type="submit">تأكيد الدفع</button>
     </form>
