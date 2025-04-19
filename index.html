@@ -1,183 +1,669 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4228349716002413" crossorigin="anonymous"></script>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>🚀 Hack Simulator Pro</title>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UC Pubg mobile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; overflow: hidden; }
+    /* لوحة ألوان احترافية */
+    :root {
+      --primary: #007BFF; /* أزرق احترافي */
+      --secondary: #F8F9FA; /* خلفية فاتحة جداً */
+      --dark: #343A40;      /* رمادي داكن احترافي */
+      --light: #ffffff;     /* أبيض */
+      --accent: #FFC107;    /* أصفر ذهبي احترافي */
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
-      background: #000;
-      color: #0f0;
-      font-family: 'Share Tech Mono', monospace;
-      -webkit-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      touch-action: manipulation;
+      font-family: 'Tajawal', sans-serif;
+      background-color: var(--secondary);
+      color: var(--dark);
+      line-height: 1.6;
     }
-    canvas {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: -1;
-    }
-    .console {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 95%;
-      max-width: 600px;
-      background: rgb(0 0 0 / 0%);
-      border: 1px solid #0f0;
-      border-radius: 10px;
+    /* شريط التنقل */
+    header {
+      background-color: #326fad;
       padding: 20px;
-      backdrop-filter: blur(5px);
-      box-shadow: 0 0 20px #0f0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    .console h1 {
-      font-size: 1.3rem;
+    header .logo {
+      color: var(--light);
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: var(--light);
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: var(--accent);
+    }
+    /* قسم الباقات */
+    .packages {
+      max-width: 1200px;
+      margin: 100px auto 50px;
+      padding: 20px;
+    }
+    .packages h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      color: var(--dark);
+    }
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .package-card {
+      background: var(--light);
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .package-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+    .package-card img {
+      width: 100px;
+      margin-bottom: 15px;
+    }
+    .package-card h3 {
+      font-size: 1.8rem;
       margin-bottom: 10px;
+      color: var(--dark);
+    }
+    .package-card p {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #007bff;
+    }
+    .package-card button {
+      font-weight: bold;
+      background: var(--primary);
+      color: var(--light);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 15px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .package-card button:hover {
+      background: #0056b3;
+    }
+    /* تنسيقات خاصة ببطاقة الخصم */
+    .package-card.discount {
+      position: relative;
+    }
+    .discount-ribbon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: var(--accent);
+      color: var(--dark);
+      padding: 5px 10px;
+      font-weight: bold;
+      border-radius: 5px;
+      transform: rotate(15deg);
+    }
+    .original-price {
+      text-decoration: line-through;
+      margin-right: 5px;
+      color: #d55454;
+    }
+    .discounted-price {
+      font-weight: bold;
+      color: var(--primary);
+    }
+    /* قسم الأسئلة الشائعة */
+    .faq {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+    .faq h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+      color: var(--dark);
+    }
+    .faq-item {
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .faq-item .question {
+      background: var(--primary);
+      color: var(--light);
+      padding: 15px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: background 0.3s ease;
+    }
+    .faq-item .question:hover {
+      background: #0056b3;
+    }
+    .faq-item .answer {
+      display: none;
+      padding: 15px;
+      background: var(--light);
+      color: #000000;
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+    /* النافذة المنبثقة للدفع */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: none;
+      z-index: 999;
+    }
+    .modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--light);
+      width: 90%;
+      max-width: 500px;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 1000;
+      animation: fadeIn 0.5s ease;
       text-align: center;
     }
-    .console .output {
-      min-height: 150px;
-      max-height: 60vh;
-      overflow-y: auto;
-      line-height: 1.4;
-      white-space: pre-wrap;
-      font-size: 1rem;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translate(-50%, -40%); }
+      to { opacity: 1; transform: translate(-50%, -50%); }
     }
-    .cursor {
-      display: inline-block;
-      width: 10px;
-      background-color: #0f0;
-      animation: blink 1s steps(2) infinite;
-      vertical-align: bottom;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-    .progress-bar {
+    .modal .close-btn {
       position: absolute;
-      top: 0; left: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #0f0, #00ff00);
-      animation: load 10s linear forwards;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      color: var(--dark);
+      cursor: pointer;
     }
-    @keyframes load {
-      from { width: 0%; }
-      to { width: 100%; }
+    .modal form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
     }
-    @media (max-width: 480px) {
-      .console h1 {
-        font-size: 1.1rem;
-      }
-      .console .output {
-        font-size: 0.95rem;
-      }
-    }
-    .whatsapp-message {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background: rgba(0, 255, 0, 0.1);
-      color: #0f0;
-      border: 1px solid #0f0;
-      border-radius: 10px;
-      padding: 12px 16px;
+    .modal form input {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
       font-size: 1rem;
-      z-index: 999;
-      box-shadow: 0 0 10px #0f0;
-      display: none;
-      text-decoration: none;
     }
-    .whatsapp-message:hover {
-      background: rgba(0, 255, 0, 0.2);
+    .modal form button {
+      font-weight: bold;
+      background: var(--primary);
+      color: var(--light);
+      border: none;
+      padding: 12px;
+      border-radius: 15px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .modal form button:hover {
+      background: #0056b3;
+    }
+    /* زر اختيار الصورة الاحترافي */
+    .file-input-wrapper {
+      text-align: center;
+    }
+    .file-input-label {
+      display: inline-block;
+      background: linear-gradient(45deg, #82b9f3, #b0e0f8);
+      color: #000000;
+      padding: 8px 13px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: bold;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.file-input-label:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.file-input-label:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    /* زر النسخ بصيغة أيقونة صغيرة */
+    #copyPhoneBtn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
+    #copyPhoneBtn svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--primary);
+    }
+    /* نص حالة النسخ */
+    #copyStatus {
+      display: none;
+      margin-left: 5px;
+      font-size: 0.9rem;
+      color: green;
+    }
+    /* التذييل */
+    footer {
+      background: #082038;
+      color: var(--light);
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+    footer p {
+      font-size: 1rem;
+    }
+    @media (max-width: 768px) {
+      .packages h2 {
+        font-size: 2rem;
+      }
+    }
+    /* شعار واتساب المتحرك */
+    .whatsapp-logo {
+      position: fixed;
+      left: 20px;
+      bottom: 20px;
+      width: 60px;
+      z-index: 1100;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    /* نافذة تأكيد الدفع */
+    #successModal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--light);
+      width: 90%;
+      max-width: 400px;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      z-index: 1001;
+    }
+    #successModal h2 {
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+    #successModal p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    #successModal button {
+      background: var(--primary);
+      color: var(--light);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    #successModal button:hover {
+      background: #0056b3;
+    }
+    #successOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      z-index: 1000;
+    }
+    /* نافذة التحميل */
+    #loadingModal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--light);
+      width: 90%;
+      max-width: 300px;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      z-index: 1002;
+    }
+    #loadingOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      z-index: 1001;
+    }
+    /* سبينر التحميل */
+    .spinner {
+      width: 40px;
+      height: 40px;
+      margin: 10px auto;
+      border: 4px solid var(--primary);
+      border-top: 4px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
   </style>
 </head>
 <body>
-  <canvas id="matrix"></canvas>
-  <div class="progress-bar"></div>
-  <div class="console">
-    <h1>جارٍ تفعيل أداة الاختراق...</h1>
-    <div class="output" id="output"></div><span class="cursor"></span>
+  <!-- شريط التنقل -->
+  <header>
+    <div class="logo">UC Pubg mobile</div>
+  </header>
+
+  <!-- قسم الباقات -->
+  <section class="packages" id="packages">
+    <h2>Offers</h2>
+    <div class="package-grid">
+      <div class="package-card">
+        <img src="60 UC.png" alt="باقة 60 شدّة">
+        <h3>60 شدّة</h3>
+        <p>السعر: 50.00 EGP</p>
+        <button onclick="openModal('60 شدّة', '50.00')">شراء الآن</button>
+      </div>
+      <div class="package-card">
+        <img src="60 UC.png" alt="باقة 300+25 شدّة">
+        <h3>300+25 شدّة</h3>
+        <p>السعر: 230.00 EGP</p>
+        <button onclick="openModal('300+25 شدّة', '230.00')">شراء الآن</button>
+      </div>
+      <!-- الحزمة الأخيرة مع خصم -->
+      <div class="package-card discount">
+        <div class="discount-ribbon">خصم</div>
+        <img src="60 UC.png" alt="باقة 60+600 شدّة">
+        <h3>600+60 شدّة</h3>
+        <p>
+          <span class="original-price">450.00 EGP</span><br>
+          <span class="discounted-price">420.00 EGP</span>
+        </p>
+        <button onclick="openModal('600+60 شدّة', '420.00')">شراء الآن</button>
+      </div>
+      <div class="package-card">
+        <img src="60 UC.png" alt="باقة 1500+300 شدّة">
+        <h3>1500+300 شدّة</h3>
+        <p>السعر: 1100.00 EGP</p>
+        <button onclick="openModal('1500+300 شدّة', '1100.00')">شراء الآن</button>
+      </div>
+      <div class="package-card">
+        <img src="60 UC.png" alt="باقة 3000+850 شدّة">
+        <h3>3000+850 شدّة</h3>
+        <p>السعر: 2100.00 EGP</p>
+        <button onclick="openModal('3000+850 شدّة', '2100.00')">شراء الآن</button>
+      </div>
+      <div class="package-card">
+        <img src="60 UC.png" alt="باقة 6000+2100 شدّة">
+        <h3>6000+2100 شدّة</h3>
+        <p>السعر: 4200.00 EGP</p>
+        <button onclick="openModal('6000+2100 شدّة', '4200.00')">شراء الآن</button>
+      </div>
+      <!-- الحزمة الأخيرة مع خصم -->
+      <div class="package-card discount">
+        <div class="discount-ribbon">خصم</div>
+        <img src="60 UC.png" alt="باقة 12000+4200 شدّة">
+        <h3>12000+4200 شدّة</h3>
+        <p>
+          <span class="original-price">8400.00 EGP</span><br>
+          <span class="discounted-price">7400.00 EGP</span>
+        </p>
+        <button onclick="openModal('12000+4200 شدّة', '7400.00')">شراء الآن</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم الأسئلة الشائعة -->
+  <section class="faq" id="faq">
+    <h2>الأسئلة الشائعة</h2>
+    <div class="faq-item">
+      <div class="question" onclick="toggleFAQ(this)">كيف يتم شحن الشدات؟</div>
+      <div class="answer">
+        اختار عدد الشدات المناسب لحضرتك ، واضغط على شراء الآن و هيظهرلك واجهة الدفع تتابع تعليمات الدفع وتحول المبلغ اللي هيظهرلك و تكتب ال ID بتاع حسابك وتكتب الرقم اللي حولت منه وفي الاخر تضغط على اضغط هنا لرفع صورة عملية التحويل وبعدين بتدوس على تأكيد الدفع .
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="question" onclick="toggleFAQ(this)">ما هي طرق الدفع المتاحة؟</div>
+      <div class="answer">
+        طريقة الدفع الوحيدة الموجودة حاليًا هي محافظ الموبايل (فودافون كاش، اورنج كاش، اتصالات كاش وغيرهم).
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="question" onclick="toggleFAQ(this)">ماذا لو واجهت مشكلة أثناء الشحن؟</div>
+      <div class="answer">
+        يمكنك التواصل مع فريق الدعم الفني عبر الضغط على علامة الواتساب الظاهرة أسفل يسار الموقع.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="question" onclick="toggleFAQ(this)">كيفية شحن حزمة الازدهار؟</div>
+      <div class="answer">
+        لشحن حزمة الازدهار اضغط على علامة الواتساب أسفل يسار الموقع سيتم توجيهك للواتساب الخاص بي للتواصل معي.
+      </div>
+    </div>
+  </section>
+
+  <!-- النافذة المنبثقة للدفع -->
+  <div class="overlay" id="overlay" onclick="closeModal()"></div>
+  <div class="modal" id="paymentModal">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <!-- الصورة في أعلى النافذة -->
+    <div class="modal-image" style="text-align:center; margin:20px 0;">
+      <img src="vodafone-cash-logo.png" alt="Vodafone Cash" style="max-width:50%; height:auto;">
+    </div>
+    <!-- معلومات الدفع مع أيقونة النسخ ونص حالة النسخ -->
+    <p id="paymentInfo" style="text-align:center; font-weight:bold;">
+      قم بتحويل مبلغ <span id="amount"></span> EGP لهذا الرقم 
+      <span id="paymentPhoneNumber">01070817647</span>
+      <button id="copyPhoneBtn" onclick="copyPhoneNumber()" title="نسخ الرقم">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+          <path d="M10 1.5v.5H6V1.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5z"/>
+          <path d="M3 2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3zm10 1v.5H3V3a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5zM2 4h12v9a.5.5 0 0 1-.5.5H2.5A.5.5 0 0 1 2 13V4z"/>
+        </svg>
+      </button>
+      <span id="copyStatus">تم النسخ</span>
+    </p>
+    <form id="paymentForm" onsubmit="submitPayment(event)">
+      <input type="text" id="pubgID" placeholder="أدخل ID الخاص بك" required>
+      <input type="text" id="phoneNumber" placeholder="رقم الهاتف الذي تمت منه العملية" required>
+      <!-- زر اختيار الصورة الاحترافي -->
+      <div class="file-input-wrapper">
+        <input type="file" id="paymentProof" accept="image/*" required style="display:none;">
+        <label for="paymentProof" class="file-input-label">اضغط هنا لرفع صورة سكرين شوت عملية التحويل</label>
+      </div>
+      <button type="submit">تأكيد الدفع</button>
+    </form>
   </div>
 
-  <a href="https://wa.me/+201070817647" class="whatsapp-message" id="whatsapp-msg" target="_blank">
-    🛑 راسلني على الواتساب لإزالة الفيروسات 💀📱
+  <!-- نافذة تحميل أثناء إرسال الطلب -->
+  <div class="overlay" id="loadingOverlay"></div>
+  <div class="modal" id="loadingModal">
+    <h2>جاري إرسال الطلب...</h2>
+    <p>يرجى الانتظار...</p>
+    <div class="spinner"></div>
+  </div>
+
+  <!-- النافذة المنبثقة لتأكيد الطلب -->
+  <div class="overlay" id="successOverlay"></div>
+  <div class="modal" id="successModal">
+    <span class="close-btn" onclick="closeSuccessModal()">&times;</span>
+    <h2>تم إرسال الطلب بنجاح ✅</h2>
+    <p>ستصل الشدات فور التحقق من الدفع.</p>
+    <button onclick="closeSuccessModal()">تم</button>
+  </div>
+
+  <!-- التذييل -->
+  <footer>
+    <p>&copy; 2025 شحن شدات ببجي. جميع الحقوق محفوظة.</p>
+  </footer>
+
+  <!-- شعار واتساب متحرك -->
+  <a href="https://wa.me/+201070817647" target="_blank" class="whatsapp-logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب">
   </a>
 
   <script>
-    const canvas = document.getElementById('matrix');
-    const ctx = canvas.getContext('2d');
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+    let selectedPackage = { name: '', price: '' };
+
+    function openModal(packageName, packagePrice) {
+      selectedPackage.name = packageName;
+      selectedPackage.price = packagePrice;
+      
+      // تحديث عناصر النص في نافذة الدفع
+      document.getElementById('amount').textContent = packagePrice;
+      document.getElementById('paymentPhoneNumber').textContent = '01070817647';
+      
+      document.getElementById('paymentModal').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
     }
-    resizeCanvas();
-    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    const fontSize = 14;
-    let columns;
-    let drops;
-    function setupMatrix() {
-      columns = Math.floor(canvas.width / fontSize);
-      drops = Array(columns).fill(1);
+
+    function closeModal() {
+      document.getElementById('paymentModal').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
     }
-    setupMatrix();
-    function drawMatrix() {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = '#0f0';
-      ctx.font = fontSize + 'px Share Tech Mono';
-      for (let i = 0; i < drops.length; i++) {
-        const text = letters.charAt(Math.floor(Math.random() * letters.length));
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
-        drops[i]++;
+
+    // دالة نسخ رقم الهاتف مع عرض رسالة "تم النسخ"
+    function copyPhoneNumber() {
+      const phone = document.getElementById('paymentPhoneNumber').textContent;
+      navigator.clipboard.writeText(phone)
+        .then(() => {
+          const copyStatus = document.getElementById('copyStatus');
+          copyStatus.style.display = 'inline';
+          setTimeout(() => {
+            copyStatus.style.display = 'none';
+          }, 2000);
+        })
+        .catch(err => console.error('فشل نسخ الرقم:', err));
+    }
+
+    // دالة إرسال البيانات إلى تيلجرام
+    function submitPayment(event) {
+      event.preventDefault();
+      const pubgID = document.getElementById('pubgID').value;
+      const phoneNumber = document.getElementById('phoneNumber').value;
+      const paymentProof = document.getElementById('paymentProof').files[0];
+
+      if (!pubgID || !phoneNumber || !paymentProof) {
+        alert('يرجى تعبئة جميع الحقول المطلوبة.');
+        return;
       }
-    }
-    setInterval(drawMatrix, 50);
-    window.addEventListener('resize', () => {
-      resizeCanvas();
-      setupMatrix();
-    });
 
-    const outputEl = document.getElementById('output');
-    const whatsappMsg = document.getElementById('whatsapp-msg');
-    const commands = [
-      'اختراق الصلاحيات... [████▂ ]',
-      'الوصول إلى الكاميرا... [✔]',
-      'تحميل الصور والملفات... [█████▆]',
-      'تسلل إلى الشبكة المحلية... [✔]',
-      'تشغيل backdoor... [███████▇]',
-      'اكتمل جمع البيانات... [✔]',
-      'اكتمل![✔]'
-    ];
-    let cmdIndex = 0;
-    let charIndex = 0;
+      openLoadingModal(); // إظهار نافذة التحميل فورًا
 
-    function typeCommand() {
-      if (cmdIndex < commands.length) {
-        if (charIndex < commands[cmdIndex].length) {
-          outputEl.textContent += commands[cmdIndex].charAt(charIndex);
-          charIndex++;
-          setTimeout(typeCommand, 80);
+      const formData = new FormData();
+      formData.append('chat_id', '7336270350'); // استبدل بالـ Chat ID الخاص بك
+      formData.append('caption', `📌ID : ${pubgID}\n📌phone number : ${phoneNumber}\n📌UC: ${selectedPackage.name}`);
+      formData.append('photo', paymentProof);
+
+      fetch('https://api.telegram.org/bot7722422574:AAGBP5AeJPdAs9Gs0dJOU7_rSLOdrIKimfI/sendPhoto', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        closeLoadingModal();
+        if (data.ok) {
+          openSuccessModal();
         } else {
-          outputEl.textContent += '\n';
-          cmdIndex++;
-          charIndex = 0;
-          setTimeout(typeCommand, 600);
+          alert('حدث خطأ أثناء إرسال البيانات إلى تيلجرام.');
         }
-      } else {
-        // Show WhatsApp message after last command
-        whatsappMsg.style.display = 'block';
-      }
+        closeModal();
+        document.getElementById('paymentForm').reset();
+      })
+      .catch(error => {
+        closeLoadingModal();
+        console.error(error);
+        alert('حدث خطأ أثناء إرسال البيانات.');
+      });
     }
-    setTimeout(typeCommand, 1200);
+
+    // إظهار شاشة الانتظار
+    function openLoadingModal() {
+      document.getElementById('loadingModal').style.display = 'block';
+      document.getElementById('loadingOverlay').style.display = 'block';
+    }
+
+    // إغلاق شاشة الانتظار
+    function closeLoadingModal() {
+      document.getElementById('loadingModal').style.display = 'none';
+      document.getElementById('loadingOverlay').style.display = 'none';
+    }
+
+    // فتح نافذة النجاح
+    function openSuccessModal() {
+      document.getElementById('successModal').style.display = 'block';
+      document.getElementById('successOverlay').style.display = 'block';
+    }
+
+    // إغلاق نافذة النجاح
+    function closeSuccessModal() {
+      document.getElementById('successModal').style.display = 'none';
+      document.getElementById('successOverlay').style.display = 'none';
+    }
+
+    // وظيفة إظهار وإخفاء الإجابة في الأسئلة الشائعة
+    function toggleFAQ(element) {
+      const answer = element.nextElementSibling;
+      answer.style.display = (answer.style.display === "block") ? "none" : "block";
+    }
   </script>
 </body>
 </html>
